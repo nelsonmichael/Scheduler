@@ -5,14 +5,12 @@
     using System.Linq;
     using System.Text;
 
-    public class Setting
+    public class MeetingChange
     {
         public virtual int Id { get; set; }
 
-        public virtual Language Language { get; set; }
+        public virtual Meeting Meeting { get; set; }
 
-        public virtual int SettingNumber { get; set; }
-
-        public virtual string Description { get; set; }
+        public virtual MeetingChangeType ChangeType { get; set; }
     }
 }

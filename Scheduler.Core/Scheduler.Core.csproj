@@ -39,6 +39,9 @@
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -51,6 +54,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,11 +66,47 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\NHibernateProfilerBootstrapper.cs" />
+    <Compile Include="Data\AbstractNHibernateDao.cs" />
+    <Compile Include="Data\IDao.cs" />
+    <Compile Include="Data\IDaoFactory.cs" />
+    <Compile Include="Data\NHibernateSessionManager.cs" />
+    <Compile Include="Domain\Assignment.cs" />
+    <Compile Include="Domain\Congregation.cs" />
+    <Compile Include="Domain\CounselPoint.cs" />
     <Compile Include="Domain\Language.cs" />
     <Compile Include="Domain\Meeting.cs" />
+    <Compile Include="Domain\MeetingChange.cs" />
+    <Compile Include="Domain\MeetingChangeType.cs" />
     <Compile Include="Domain\Person.cs" />
     <Compile Include="Domain\Setting.cs" />
+    <Compile Include="Domain\Student.cs" />
+    <Compile Include="Domain\Talk.cs" />
+    <Compile Include="Domain\UnavailableStudents.cs" />
+    <Compile Include="Mappings\AssignmentMap.cs" />
+    <Compile Include="Mappings\CongregationMap.cs" />
+    <Compile Include="Mappings\CounselPointMap.cs" />
+    <Compile Include="Mappings\LanguageMap.cs" />
+    <Compile Include="Mappings\MeetingChangeMap.cs" />
+    <Compile Include="Mappings\MeetingChangeTypeMap.cs" />
+    <Compile Include="Mappings\MeetingMap.cs" />
+    <Compile Include="Mappings\PersonMap.cs" />
+    <Compile Include="Mappings\SettingMap.cs" />
+    <Compile Include="Mappings\StudentMap.cs" />
+    <Compile Include="Mappings\TalkMap.cs" />
+    <Compile Include="Mappings\UnavailableStudentsMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\AssignmentProvider.cs" />
+    <Compile Include="Providers\CongregationProvider.cs" />
+    <Compile Include="Providers\CounsePointProvider.cs" />
+    <Compile Include="Providers\LanguageProvider.cs" />
+    <Compile Include="Providers\MeetingChangeProvider.cs" />
+    <Compile Include="Providers\MeetingChangeTypeProvider.cs" />
+    <Compile Include="Providers\MeetingProvider.cs" />
+    <Compile Include="Providers\PersonProvider.cs" />
+    <Compile Include="Providers\SettingProvider.cs" />
+    <Compile Include="Providers\StudentProvider.cs" />
+    <Compile Include="Providers\TalkProvider.cs" />
+    <Compile Include="Providers\UnavailableStudentsProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -75,7 +115,6 @@
     <Content Include="App_Start\NHibernateProfilerBootstrapper.vb" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

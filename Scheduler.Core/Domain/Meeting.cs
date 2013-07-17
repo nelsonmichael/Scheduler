@@ -7,8 +7,8 @@
 
     public class Meeting
     {
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
-        public DateTime WeekOf { get; set; }
+        public virtual DateTime WeekOf { get; set; }
     }
 }

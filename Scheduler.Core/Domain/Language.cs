@@ -7,8 +7,8 @@
 
     public class Language
     {
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
-        public string LanguageName { get; set; }
+        public virtual string LanguageName { get; set; }
     }
 }
